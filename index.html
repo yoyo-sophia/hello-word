@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+    function adaptVP(d){function e(){var c,b;return a.uWidth=d.uWidth?d.uWidth:640,a.dWidth=d.dWidth?d.dWidth:window.screen.width||window.screen.availWidth,a.ratio=window.devicePixelRatio?window.devicePixelRatio:1,a.userAgent=navigator.userAgent,a.bConsole=d.bConsole?d.bConsole:!1,d.mode?(a.mode=d.mode,void 0):(c=a.userAgent.match(/Android/i),c&&(a.mode="android-2.2",b=a.userAgent.match(/Android\s(\d+.\d+)/i),b&&(b=parseFloat(b[1])),2.2==b||2.3==b?a.mode="android-2.2":4.4>b?a.mode="android-dpi":4.4<=b&&(a.mode=a.dWidth>a.uWidth?"android-dpi":"android-scale")),void 0)}function f(){var c,b;b="";c=!1;switch(a.mode){case"apple":b="width="+a.uWidth+", user-scalable=no";break;case"android-2.2":d.dWidth||(a.dWidth=2==a.ratio?720:1.5==a.ratio?480:1==a.ratio?320:0.75==a.ratio?240:480),c=window.screen.width||window.screen.availWidth,320==c?a.dWidth=a.ratio*c:640>c&&(a.dWidth=c),a.mode="android-dpi",c=!0;case"android-dpi":b=160*a.uWidth/a.dWidth*a.ratio;b="target-densitydpi="+b+", width="+a.uWidth+", user-scalable=no";c&&(a.mode="android-2.2");break;case"android-scale":b="width="+a.uWidth+", user-scalable=no"}c=document.querySelector("meta[name='viewport']")||document.createElement("meta");c.name="viewport";c.content=b;b=document.getElementsByTagName("head");0<b.length&&b[0].appendChild(c)}function g(){var c="";for(key in a){c+=key+":"+a[key]+"; "}alert(c)}if(d){var a={uWidth:0,dWidth:0,ratio:1,mode:"apple",userAgent:null,bConsole:!1};e();f();a.bConsole&&g()}}adaptVP({uWidth:750});</script>
+    <title>elm</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
